@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css"> <!--CSS for the Data Table -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script> <!-- Modal for Save Button-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <!-- Boxicons CDN Link -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo-details">
+        <i class="bx bxs-virus-block icon"></i>
+        <div class="logo_name">COVID19</div>
+        <i class="bx bx-menu" id="btn"></i>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <i class="bx bx-search"></i>
+          <input type="text" placeholder="Search..." />
+          <span class="tooltip">Search</span>
+        </li>
+        <li>
+          <a href="dashboard.html">
+            <i class="bx bx-grid-alt"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+          <span class="tooltip">Dashboard</span>
+        </li>
+        <li>
+          <a href="form.html">
+            <i class="bx bx-table"></i>
+            <span class="links_name">Data Table</span>
+          </a>
+          <span class="tooltip">Data Table</span>
+        </li>
+        <li></li>
+
+        <li>
+          <a href="#">
+            <i class="bx bx-pie-chart-alt-2"></i>
+            <span class="links_name">Analytics</span>
+          </a>
+          <span class="tooltip">Analytics</span>
+        </li>
+
+        <li class="profile">
+          <div class="profile-details">
+            <img src="profile.jpg" alt="profileImg" />
+            <div class="name_job">
+              <div class="name">The Hypeconic</div>
+              <div class="job">Admin</div>
+            </div>
+          </div>
+          <i class="bx bx-log-out" id="log_out"></i>
+        </li>
+      </ul>
+    </div>
+    <section class="home-section col">
+      <div class="text">Data</div>
+      <div>
+        <div class="form-container">
+          <div class="container">
+            <div class="row">
+              <form action="" method="POST">
+                <div class="row align-items-center">
+                  <div class="col-6 mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input
+                      type="text"
+                      class="form-control form-control-sm"
+                      id="name"
+                      name="name"
+                      placeholder="Enter your Name"
+                      required
+                    />
+                  </div>
+
+                  <div class="col-3 mb-3">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select
+                      id="gender"
+                      class="form-select form-select-sm"
+                      aria-label=".form-select-sm example"
+                    >
+                      <option selected>Select Gender</option>
+                      <option type="text" id="gender" name="gender" value="Male">Male</option>
+                      <option type="text" id="gender" name="gender" value="Female">Female</option>
+                      <option type="text" id="gender" name="gender" value="Other">Other</option>
+                    </select>
+                  </div>
+                  <div class="col-3 mb-3">
+                    <label for="age" class="form-label">Age</label>
+                    <input
+                      type="number"
+                      class="form-control form-control-sm"
+                      id="age"
+                      name="age"
+                      placeholder="Enter your Age"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row align-items-center">
+                  <div class="col-6 mb-3">
+                    <label for="mobile_no" class="form-label"
+                      >Mobile No.:</label
+                    >
+                    <input
+                      type="tel"
+                      class="form-control form-control-sm"
+                      id="mobile_no"
+                      name="mobile_no"
+                      placeholder="Enter your phone number"
+                      required
+                    />
+                  </div>
+                  <div class="col-6 mb-3">
+                    <label for="body_temp" class="form-label"
+                      >Body Temperature:</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control form-control-sm"
+                      id="body_temp"
+                      name="body_temp"
+                      placeholder="Enter your Body Temperature"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="col mb-4" >
+                  <label for="diagnosed" class="form-label"
+                    >COVID-19 Diagnosed? (Yes/No) </label>
+                  <br>
+                  <input 
+                    class="form-check-input" 
+                    type="radio" 
+                    id = "diagnosed" 
+                    name="diagnosed" 
+                    value="Yes" 
+                    required
+                  />
+                  <label for="diagnosed"> Yes   </label> 
+  
+                  <input 
+                    class="form-check-input" 
+                    type="radio" 
+                    id = "diagnosed" 
+                    name="diagnosed" 
+                    value="No" 
+                    required
+                  />
+                  <label class="form-check-label" for="diagnosed"> No </label> 
+                </div>
+
+                <div class="col mb-4">
+                  <label for="encounter" class="form-label"
+                    >COVID-19 Encounter? (Yes/No) </label>
+                  <br>
+                  <input 
+                    class="form-check-input" 
+                    type="radio" 
+                    id = "encounter" 
+                    name="encounter" 
+                    value="Yes" 
+                    required
+                  />
+                  <label for="encounter"> Yes </label> 
+  
+                  <input 
+                    class="form-check-input" 
+                    type="radio" 
+                    id = "encounter" 
+                    name="encounter" 
+                    value="No" 
+                    required
+                  />
+                  <label class="form-check-label" for="encounter"
+                  > No </label> 
+                </div>
+
+                <div class="col mb-4">
+                  <label for="vaccinated" class="form-label"
+                    >Vaccinated? (Yes/No)</label>
+                  <br>
+                  <input 
+                    class="form-check-input" 
+                    type="radio" 
+                    id = "vaccinated" 
+                    name="vaccinated" 
+                    value="Yes" 
+                    required
+                  />
+                  <label class="form-check-label" for="vaccinated"
+                  > Yes </label> 
+  
+                  <input 
+                    class="form-check-input" 
+                    type="radio" 
+                    id = "vaccinated" 
+                    name="vaccinated" 
+                    value="No" 
+                    required
+                  />
+                  <label class="form-check-label" for="vaccinated"
+                  > No </label> 
+                </div>
+
+                <div class="mb-3">
+                  <label for="nationality" class="form-label"
+                    >Nationality</label
+                  >
+                  <select 
+                    id="nationality" 
+                    class="form-select" 
+                    aria-label="Default select example" 
+                    required
+                  >
+                    <option selected>Select Nationality</option>
+                    <option 
+                      type="text" 
+                      id="nationality" 
+                      name="nationality" 
+                      value="Filipino"
+                        >Filipino</option>
+                    <option 
+                      type="text" 
+                      id="nationality" 
+                      name="nationality" 
+                      value="Others"
+                        >Others</option>
+                  </select>
+                </div>
+                <button
+                  type="button"
+                  onclick="addInfo();"
+                  class="btn btn-primary mb-3"
+                >
+                  Save
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- table -->
+
+        <div class="row">
+          <div class="col"></div>
+          <div id="tabular" class="col"></div>
+          <div class="col"></div>
+        </div>
+        
+      </div>
+
+
+    </section>
+    <script src="js/dashboard.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/validationForm.js"></script>
+
+<!-- Add DataTables JS -->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+
+<script>
+  function cformtable() {
+    return '<div class="card-body">' +
+      '<table id="tabentries" class="table table-bordered table-hover">' +
+      '<thead>' +
+      '<tr>' +
+      '<th> Name </th>' +
+      '<th> Gender </th>' +
+      '<th> Age </th>' +
+      '<th> Mobile No. </th>' +
+      '<th> Body Temperature </th>' +
+      '<th> Diagnosed? </th>' +
+      '<th> Encounter? </th>' +
+      '<th> Vaccinated? </th>' +
+      '<th> Nationality </th>' +
+      '</tr>' +
+      '</thead>' +
+      '<tbody>' +
+      '</tbody>' +
+      '</table>' +
+      '<br />' +
+      '<div id="next"></div>' +
+      '</div>';
+  }
+
+  function cformtablerow(par_row) {
+    $("#tabentries tbody").append(
+      '<tr id="' + par_row.id + '">' +
+      '<td>' + par_row.name + '</td>' +
+      '<td>' + par_row.gender + '</td>' +
+      '<td>' + par_row.age + '</td>' +
+      '<td>' + par_row.mobile_no + '</td>' +
+      '<td>' + par_row.body_temp + '</td>' +
+      '<td>' + par_row.diagnosed + '</td>' +
+      '<td>' + par_row.encounter + '</td>' +
+      '<td>' + par_row.vaccinated + '</td>' +
+      '<td>' + par_row.nationality + '</td>' +
+      '</tr>'
+    );
+  }
+
+  function getAllInfo() {
+    $.ajax({
+      url: 'getAllInfo.php',
+      method: "GET",
+      data: {},
+      dataType: "json",
+      success: function (response) {
+        $.each(response, function (key, value) {
+          cformtablerow({
+            id: value.id,
+            name: value.name,
+            gender: value.gender,
+            age: value.age,
+            mobile_no: value.mobile_no,
+            body_temp: value.body_temp,
+            diagnosed: value.diagnosed,
+            encounter: value.encounter,
+            vaccinated: value.vaccinated,
+            nationality: value.nationality
+          });
+
+        });
+
+        // Initialize DataTables after appending rows
+        $('#tabentries').DataTable();
+      }
+    });
+  }
+
+  function start() {
+    $("#tabular").html(cformtable());
+    getAllInfo();
+  }
+  start();
+</script>
+
+  <!-- Modal -->
+  <div class="modal fade" id="savedInfoModal" tabindex="-1" aria-labelledby="savedInfoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="savedInfoModalLabel">Info Saved</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Your information has been successfully saved!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+   <script src="js/validationForm.js"></script>
+
+  </body>
+</html>
